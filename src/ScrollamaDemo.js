@@ -14,13 +14,14 @@ const ScrollamaDemo = () => {
     <>
       <div style={{height: '1000px'}}/>
       <div style={{ margin: '50vh 0', border: '2px dashed skyblue' }}>
-        <div style={{ position: 'sticky', top: '50vh', border: '1px solid orchid', width: '50%', float: 'left' }}>
+        <div style={{ position: 'sticky', top: '50vh', border: '1px solid orchid', width: '50%', float: 'left', zIndex: -1 }}>
           I'm sticky. The current triggered step index is: {currentStepIndex}
         </div>
         <div
           style={{
             margin: '50vh 0',
             border: '1px solid gray',
+            background: '#ffffff',
           }}
         >
           <div style={{ width: '50%', float: 'right' }}>
@@ -33,12 +34,13 @@ const ScrollamaDemo = () => {
           </div>
           <br style={{clear: 'both'}}/>
         </div>
-        <Scrollama onStepEnter={onStepEnter} debug>
+        <Scrollama onStepEnter={onStepEnter} threshold={1} offset={0.5} debug>
           <Step data={0} key={0}>
             <div
               style={{
                 margin: '50vh 0',
                 border: '1px solid gray',
+                background: '#ffffff',
                 opacity: currentStepIndex === 0 ? 1 : 0.2,
               }}
             >
@@ -58,6 +60,7 @@ const ScrollamaDemo = () => {
               style={{
                 margin: '50vh 0',
                 border: '1px solid gray',
+                background: '#ffffff',
                 opacity: currentStepIndex === 1 ? 1 : 0.2,
               }}
             >
@@ -76,6 +79,7 @@ const ScrollamaDemo = () => {
               style={{
                 margin: '50vh 0',
                 border: '1px solid gray',
+                background: '#ffffff',
                 opacity: currentStepIndex === 2 ? 1 : 0.2,
               }}
             >
@@ -92,6 +96,7 @@ const ScrollamaDemo = () => {
               style={{
                 margin: '50vh 0',
                 border: '1px solid gray',
+                background: '#ffffff',
                 opacity: currentStepIndex === 3 ? 1 : 0.2,
               }}
             >
